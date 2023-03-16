@@ -11,7 +11,7 @@ const firestore = getFirestore(firebaseApp);
 
 export async function sendForm(form) {
   const docuRef = doc(firestore, `challenge/${new Date().getTime()}`);
-  setDoc(docuRef, {
+  await setDoc(docuRef, {
     id: new Date().getTime(),
     form,
   });
